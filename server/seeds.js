@@ -13,6 +13,7 @@ Meteor.startup(function() {
 
   }
   */
+
   if (Objects.find().count() === 0) {
 
       user_obj = Meteor.users.findOne()
@@ -20,7 +21,7 @@ Meteor.startup(function() {
         "date_cyrcles ": "2013-06-16",
         "date_public": "2013-06-16",
         "descr": "TV Plasma 27\" Philips, works perfect, remote control" ,
-        "image": "objects_images/1.jpg",
+        "image": "http://lorempixel.com/400/200/sports/",
         "name": "TV Plasma",
         "user": user_obj._id,
         "likes":0,
@@ -37,7 +38,7 @@ Meteor.startup(function() {
         "date_cyrcles ": "2013-06-16",
         "date_public": "2013-06-16",
         "descr": "Bycicle. Frame from 80s, new wheels, works well",
-        "image": "objects_images/2.jpg",
+        "image": "http://lorempixel.com/400/200/sports/",
         "name": "80s Bike",
         "user": user_obj._id,
         "likes":0,
@@ -54,7 +55,7 @@ Meteor.startup(function() {
         "date_cyrcles ": "2013-06-16",
         "date_public": "2013-06-16",
         "descr": "Good weights for training hard, 40ks set. ",
-        "image": "objects_images/3.jpg",
+        "image": "http://lorempixel.com/400/200/sports/",
         "name": "Weights!",
         "user": user_obj._id,
         "likes":0,
@@ -71,7 +72,7 @@ Meteor.startup(function() {
         "date_cyrcles ": "2013-06-16",
         "date_public": "2013-06-16",
         "descr": "Table ideal for living, wood, excellent conditions.",
-        "image": "objects_images/4.jpg",
+        "image": "http://lorempixel.com/400/200/sports/",
         "name": "Small Table",
         "resource_uri": "/api/object/7/",
         "user": user_obj._id,
@@ -89,7 +90,7 @@ Meteor.startup(function() {
         "date_cyrcles ": "2013-06-16",
         "date_public": "2013-06-16",
         "descr": "Backpack Montagne, 60 litters. Used for 4 months. Comfortable.",
-        "image": "objects_images/5.jpg",
+        "image": "http://lorempixel.com/400/200/sports/",
         "name": "Backpack 60L",
         "user": user_obj._id,
         "likes":0,
@@ -106,7 +107,7 @@ Meteor.startup(function() {
         "date_cyrcles ": "2013-06-16",
         "date_public": "2013-06-16",
         "descr": "Climbing shoes La Sportiva, Cobra. size 40, good grip for edges.",
-        "image": "objects_images/6.jpg",
+        "image": "http://lorempixel.com/400/200/sports/",
         "name": "Climbing Shoes 40",
         "user": user_obj._id,
         "likes":0,
