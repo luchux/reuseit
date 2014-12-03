@@ -20,7 +20,7 @@ Router.map(function() {
     }
   });
 
-  this.route('objectList', {
+  this.route('ObjectList', {
     path: '/objects',
     loginRequired: 'entrySignIn',
     waitOn: function () {
