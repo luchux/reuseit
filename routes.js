@@ -1,9 +1,5 @@
 Router.map(function() {
 
-  this.route('home', {
-    path: '/'
-  });
-
   this.route('dashboard', {
     path: '/dashboard',
     loginRequired: 'entrySignIn',
@@ -21,7 +17,7 @@ Router.map(function() {
   });
 
   this.route('ObjectList', {
-    path: '/objects',
+    path: '/',
     loginRequired: 'entrySignIn',
     waitOn: function () {
       return this.subscribe("objects");
