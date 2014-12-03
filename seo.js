@@ -1,9 +1,9 @@
 Meteor.startup(function() {
   if(Meteor.isClient) {
     SEO.config({
-      title: 'Project Title',
+      title: 'ReUseIt',
       meta: {
-        'description': 'A project by Differential.io'
+        'description': 'The community platform to recycle and share goods'
       },
       og: {
         'image': Meteor.absoluteUrl('share-image.png')
