@@ -20,7 +20,7 @@ Router.map(function() {
     path: '/',
     loginRequired: 'entrySignIn',
     waitOn: function () {
-      return this.subscribe("objects");
+      return [Meteor.subscribe("chats"), Meteor.subscribe("objects")];
     },
     data: {
       objects: Objects.find({})
