@@ -12,29 +12,42 @@
 
 <template name="Object">
     <div class="thumbnail object">
-      <div class="img" style="background-image:url({{image}})">
-        <div class="map" id="map-canvas"></div>
-        <div class="profile" id="profile-canvas"></div>
-      </div>
-      <div class='text-center'>
-        <a class="btn btn-inverse btn-likeit" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="Like it!"><i class="fa fa-thumbs-up"></i>({{ likes }})</a>
-        <a class="btn btn-inverse btn-dislikeit" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="Unlike it!"><i class="fa fa-thumbs-down"></i>({{ dislikes }})</a>
-        <a class="btn btn-inverse btn-report" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="Report"><i class="fa fa-flag "></i>({{ spam }})</a>
+      <div class="flip-container">
+       <div class="flipper">
+        <div class="front">
+          <!-- front content -->
+          <div class="img" style="background-image:url({{image}})">
+            <div class="map" id="map-canvas"></div>
+            <div class="profile" id="profile-canvas"></div>
+          </div>
+          <div class='text-center'>
+            <a class="btn btn-inverse btn-likeit" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="Like it!"><i class="fa fa-thumbs-up"></i>({{ likes }})</a>
+            <a class="btn btn-inverse btn-dislikeit" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="Unlike it!"><i class="fa fa-thumbs-down"></i>({{ dislikes }})</a>
+            <a class="btn btn-inverse btn-report" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="Report"><i class="fa fa-flag "></i>({{ spam }})</a>
 
-      </div>
+          </div>
 
-      <div class='caption'>
-        <h3>{{name}}</h3>
-        <p>{{descr}}</p>
-        <div class='btn-toolbar request-buttons'>
-              <a class="btn btn-primary btn-success btn-request">Request</a>
-              <a class="btn btn-danger btn-forget">Forget</a>
-              <a class="btn btn-inverse btn-profile" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="profile" ><i class="fa fa-user"></i></a>
-              <a class="btn btn-inverse btn-direction" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="directions"><i class="fa fa-map-marker"></i></a>
-              <a class="btn btn-inverse btn-share" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="share"><i class="fa fa-bell"></i></a>
+          <div class='caption'>
+            <h3>{{name}}</h3>
+            <p>{{descr}}</p>
+            <div class='btn-toolbar request-buttons'>
+                  <a class="btn btn-primary btn-success btn-request">Request</a>
+                  <a class="btn btn-danger btn-forget">Forget</a>
+                  <a class="btn btn-inverse btn-profile" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="profile" ><i class="fa fa-user"></i></a>
+                  <a class="btn btn-inverse btn-direction" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="directions"><i class="fa fa-map-marker"></i></a>
+                  <a class="btn btn-inverse btn-share" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="share"><i class="fa fa-bell"></i></a>
+            </div>
+          </div>
         </div>
-      </div>
 
+        <div class="back">
+          <i class="fa fa-arrow-left flip-back">back</i>
+
+            {{> Chat oid=_id }} <!--Passing the id of the product to fetch the chat about it -->
+
+        </div>
+       </div>
+     </div>
     <!--
     <div class='thumbnail back'>
       {{! profile detail will be rendered here }}
