@@ -17,3 +17,7 @@ Meteor.publishComposite("items", function() {
 Meteor.publish("objects", function() {
   return Objects.find({});
 })
+
+Meteor.publish("chats", function() {
+  return Chats.find({});
+})
