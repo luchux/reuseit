@@ -23,8 +23,11 @@ Router.map(function() {
     waitOn: function () {
       return this.subscribe("objects", Meteor.userId());
     }
+  });
 
-
+  this.route('NewObject', {
+    path: '/new',
+    loginRequired: 'entrySignIn'
   });
 
   this.route('profile', {
