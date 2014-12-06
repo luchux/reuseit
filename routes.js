@@ -19,12 +19,12 @@ Router.map(function() {
   this.route('ObjectList', {
     path: '/',
     loginRequired: 'entrySignIn',
+
     waitOn: function () {
-      return [Meteor.subscribe("chats"), Meteor.subscribe("objects")];
-    },
-    data: {
-      objects: Objects.find({})
+      return this.subscribe("objects", Meteor.userId());
     }
+
+
   });
 
   this.route('profile', {
