@@ -34,8 +34,9 @@
         {{/if}}
 
         <ul class="nav navbar-nav navbar-right">
-          <li class="{{ isActiveRoute 'ObjectList' }}"><a href="{{ pathFor 'ObjectList' }}"><i class="fa fa-home"></i> Objects</a></li>
-          <li class="{{ isActivePath 'dashboard' }}"><a href="{{ pathFor 'dashboard' }}"><i class="fa fa-gear"></i> Dashboard</a></li>
+          <li class="{{ isActiveRoute '/' }}"><a href="{{ pathFor 'ObjectList' }}"><i class="fa fa-home"></i> Objects</a></li>
+          <li class="{{ isActiveRoute '/new' }}"><a href="{{ pathFor 'NewObject' }}"><i class="fa fa-home"></i> New</a></li>
+          <li class="{{ isActivePath '/dashboard' }}"><a href="{{ pathFor 'dashboard' }}"><i class="fa fa-gear"></i> Dashboard</a></li>
         </ul>
       </div>
 
