@@ -14,6 +14,7 @@ Meteor.startup(function() {
   }
   */
 
+  Chats.remove({})
   if (Objects.find().count() === 0) {
 
       user_obj = Meteor.users.findOne()
@@ -119,6 +120,47 @@ Meteor.startup(function() {
         "lat":-37.812971,
         "lng":144.963729
       });
+    }
+
+    if (Chats.find({}).count() === 0) {
+
+        Chats.insert({
+            object_id: Objects.findOne()._id,
+            from_user_id: 'ZELyPEHpcu67ANmvu',
+            messages: [
+                {
+                    user_id: 1,
+                    message: 'Hey, Is the board still good and resists 30kg?',
+                    date: Date.now()
+                },
+
+                {
+                    user_id: 2,
+                    message: 'Hey, yes it is. It resists till 50kg',
+                    date: Date.now()
+                },
+
+                {
+                    user_id: 1,
+                    message: 'Excellente. Can pick it up at 4pm, is that good for you?',
+                    date: Date.now()
+                },
+
+                {
+                    user_id: 2,
+                    message: 'Yes, cool. Will be here all afternoon. See ya later',
+                    date: Date.now()
+                },
+
+                {
+                    user_id: 1,
+                    message: 'Great. See ya later then.',
+                    date: Date.now()
+                },
+
+            ]
+
+        })
     }
 
 });

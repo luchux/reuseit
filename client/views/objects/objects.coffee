@@ -2,6 +2,10 @@ Template.ObjectList.helpers
   objects: () ->
     Objects.find().fetch()
 
+Template.Object.helpers
+  chats: () ->
+    Chats.findOne({from_user_id: Meteor.userId(), object_id: this._id})
+
 Template.Object.rendered = ->
   latlon = new google.maps.LatLng(@data.lat, @data.lng)
   mapOptions =
@@ -49,9 +53,9 @@ Template.Object.events
 
 
   #get profile button
-  "click .btn-profile": ->
+  "click .btn-profile": (evt, template)->
     console.log "User want profile: "  if typeof console isnt "undefined"
-    console.log @_id
+    template.$(".thumbnail .flip-container").toggleClass("flip")
 
 
   #get directions button
@@ -82,3 +86,7 @@ Template.Object.events
   "click .btn-report": ->
     console.log "User report spam: "  if typeof console isnt "undefined"
     console.log @_id
+
+  "click .flip-back": (evt, template) ->
+    template.$(".thumbnail .flip-container").toggleClass("flip")
+
